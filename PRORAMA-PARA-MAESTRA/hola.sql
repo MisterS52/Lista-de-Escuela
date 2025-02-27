@@ -71,6 +71,10 @@ ALTER USER postgres WITH PASSWORD '36379025';
 show table
 ALTER TABLE Actividad
 ADD COLUMN NombreActividad VARCHAR(255);
+ALTER TABLE Grupo
+ADD COLUMN NombreMateria VARCHAR(255);
+ALTER TABLE Escuela
+ADD COLUMN TipoEscuela VARCHAR(255);
 show table
 SELECT * FROM evaluacion;
 SELECT * FROM actividad;

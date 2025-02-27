@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfas;
-import Interfas.NuevaEscuela;
 import com.mycompany.escuela.EscuelaDAO;
 import com.mycompany.escuela.GrupoDAO;
 import java.util.Scanner;
@@ -32,41 +31,22 @@ public class PantallaDeIncio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        NEscuela = new javax.swing.JToggleButton();
-        EliminarEscuela = new javax.swing.JButton();
         Comensemos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
-        jPanel1.setForeground(new java.awt.Color(255, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(255, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Engravers MT", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(236, 236, 221));
+        jLabel1.setFont(new java.awt.Font("Cambria Math", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText("Bienvenida Maestra ");
 
-        NEscuela.setBackground(new java.awt.Color(102, 102, 102));
-        NEscuela.setForeground(new java.awt.Color(255, 255, 255));
-        NEscuela.setText("Nueva Escuela");
-        NEscuela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NEscuelaActionPerformed(evt);
-            }
-        });
-
-        EliminarEscuela.setBackground(new java.awt.Color(102, 102, 102));
-        EliminarEscuela.setForeground(new java.awt.Color(255, 255, 255));
-        EliminarEscuela.setText("Eliminar Escuela");
-        EliminarEscuela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarEscuelaActionPerformed(evt);
-            }
-        });
-
-        Comensemos.setBackground(new java.awt.Color(255, 255, 255));
+        Comensemos.setBackground(new java.awt.Color(153, 153, 153));
         Comensemos.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        Comensemos.setForeground(new java.awt.Color(0, 0, 0));
+        Comensemos.setForeground(new java.awt.Color(255, 255, 255));
         Comensemos.setText("Comencemos ");
         Comensemos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,39 +59,31 @@ public class PantallaDeIncio extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(117, 117, 117)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NEscuela)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EliminarEscuela))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
+                        .addGap(72, 72, 72)
                         .addComponent(Comensemos, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 60, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
                 .addGap(48, 48, 48)
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
                 .addComponent(Comensemos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NEscuela)
-                    .addComponent(EliminarEscuela))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,22 +94,6 @@ public class PantallaDeIncio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NEscuelaActionPerformed
-   // TODO add your handling code here:
-        Scanner scanner = new Scanner(System.in);
-        NuevaEscuela panta = new NuevaEscuela(this);
-        panta.setVisible(true);
-        panta.setLocationRelativeTo(null);
-    }//GEN-LAST:event_NEscuelaActionPerformed
-
-    private void EliminarEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarEscuelaActionPerformed
-        // TODO add your handling code here:
-        Scanner scanner = new Scanner(System.in);
-        EliminarEscuela panta = new EliminarEscuela(this);
-        panta.setVisible(true);
-        panta.setLocationRelativeTo(null);
-    }//GEN-LAST:event_EliminarEscuelaActionPerformed
 
     private void ComensemosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComensemosActionPerformed
         // TODO add your handling code here:
@@ -153,8 +109,6 @@ public class PantallaDeIncio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Comensemos;
-    private javax.swing.JButton EliminarEscuela;
-    private javax.swing.JToggleButton NEscuela;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

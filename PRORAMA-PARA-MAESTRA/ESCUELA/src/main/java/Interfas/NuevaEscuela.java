@@ -4,6 +4,7 @@
  */
 package Interfas;
 import Interfas.PantallaDeIncio;
+import Interfas.InicideClase;
 import javax.swing.JFrame;
 import com.mycompany.escuela.EscuelaDAO;
 import com.mycompany.escuela.Escuelas;
@@ -20,8 +21,8 @@ public class NuevaEscuela extends javax.swing.JFrame {
     /**
      * Creates new form NuevaEscuela
      */
-    PantallaDeIncio pantallaPrincipale; // Referencia a la Pantalla principal
-    public NuevaEscuela(PantallaDeIncio pantallas) {
+    InicideClase pantallaPrincipale; // Referencia a la Pantalla principal
+    public NuevaEscuela(InicideClase pantallas) {
         
    
         this.pantallaPrincipale = pantallas; // Se pasa la referencia a Pantalla principal
@@ -49,23 +50,22 @@ public class NuevaEscuela extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Direccion = new javax.swing.JTextField();
         AguardarEscuela = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        Secundaria = new javax.swing.JRadioButton();
+        Primaria = new javax.swing.JRadioButton();
+        Preparatoria = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setForeground(new java.awt.Color(102, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nueva Escuela");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre de la Escuela: ");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Direccion:");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Clave:");
 
         AguardarEscuela.setBackground(new java.awt.Color(0, 0, 0));
@@ -74,6 +74,32 @@ public class NuevaEscuela extends javax.swing.JFrame {
         AguardarEscuela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AguardarEscuelaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Que tipo de Escuela:");
+
+        Secundaria.setBackground(new java.awt.Color(153, 153, 153));
+        Secundaria.setText("Secundaria");
+        Secundaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SecundariaActionPerformed(evt);
+            }
+        });
+
+        Primaria.setBackground(new java.awt.Color(153, 153, 153));
+        Primaria.setText("Primaria");
+        Primaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrimariaActionPerformed(evt);
+            }
+        });
+
+        Preparatoria.setBackground(new java.awt.Color(153, 153, 153));
+        Preparatoria.setText("Preparatoria");
+        Preparatoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PreparatoriaActionPerformed(evt);
             }
         });
 
@@ -90,27 +116,40 @@ public class NuevaEscuela extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(Clave, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(NomEscuela, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(AguardarEscuela)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addGap(382, 382, 382)))
-                                    .addComponent(Direccion, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(388, 388, 388))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Direccion)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(NomEscuela)
+                                        .addGap(4, 4, 4)))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(Primaria)
+                                .addGap(18, 18, 18)
+                                .addComponent(Secundaria)
+                                .addGap(18, 18, 18)
+                                .addComponent(Preparatoria))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
+                        .addGap(197, 197, 197)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(AguardarEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NomEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,22 +166,29 @@ public class NuevaEscuela extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(Clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(AguardarEscuela)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(Primaria)
+                    .addComponent(Secundaria)
+                    .addComponent(Preparatoria))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(AguardarEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,6 +219,36 @@ public class NuevaEscuela extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_AguardarEscuelaActionPerformed
 
+    private void SecundariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecundariaActionPerformed
+        if (Secundaria.isSelected()) {
+            Primaria.setEnabled(false);
+            Preparatoria.setEnabled(false);
+        } else {
+            Primaria.setEnabled(true);
+            Preparatoria.setEnabled(true);
+        }
+    }//GEN-LAST:event_SecundariaActionPerformed
+
+    private void PrimariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimariaActionPerformed
+        if (Primaria.isSelected()) {
+            Secundaria.setEnabled(false);
+            Preparatoria.setEnabled(false);
+        } else {
+            Secundaria.setEnabled(true);
+            Preparatoria.setEnabled(true);
+        }
+    }//GEN-LAST:event_PrimariaActionPerformed
+
+    private void PreparatoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreparatoriaActionPerformed
+        if (Preparatoria.isSelected()) {
+            Primaria.setEnabled(false);
+            Secundaria.setEnabled(false);
+        } else {
+            Primaria.setEnabled(true);
+            Secundaria.setEnabled(true);
+        }
+    }//GEN-LAST:event_PreparatoriaActionPerformed
+
     
     
 
@@ -181,11 +257,15 @@ public class NuevaEscuela extends javax.swing.JFrame {
     private javax.swing.JTextField Clave;
     private javax.swing.JTextField Direccion;
     private javax.swing.JTextField NomEscuela;
+    private javax.swing.JRadioButton Preparatoria;
+    private javax.swing.JRadioButton Primaria;
+    private javax.swing.JRadioButton Secundaria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

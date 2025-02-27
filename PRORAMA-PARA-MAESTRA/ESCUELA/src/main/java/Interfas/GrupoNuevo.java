@@ -66,39 +66,33 @@ public class GrupoNuevo extends javax.swing.JFrame {
         Matutino = new javax.swing.JRadioButton();
         Vespertino = new javax.swing.JRadioButton();
         AguardaGrupo = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        NombreDeLaMateria = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 153, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Crear un Grupo");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("¿Que escuela quieres?");
 
         ListadeEscuelas.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        ListadeEscuelas.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(ListadeEscuelas);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("¿Que Grado?");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("¿Que Grupo?");
 
-        Grupo.setForeground(new java.awt.Color(0, 0, 0));
         Grupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GrupoActionPerformed(evt);
             }
         });
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("¿Que Turno?");
 
-        Matutino.setForeground(new java.awt.Color(0, 0, 0));
         Matutino.setText("Matutino");
         Matutino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +100,6 @@ public class GrupoNuevo extends javax.swing.JFrame {
             }
         });
 
-        Vespertino.setForeground(new java.awt.Color(0, 0, 0));
         Vespertino.setText("Vespertino");
         Vespertino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,15 +107,15 @@ public class GrupoNuevo extends javax.swing.JFrame {
             }
         });
 
-        AguardaGrupo.setBackground(new java.awt.Color(153, 153, 153));
         AguardaGrupo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        AguardaGrupo.setForeground(new java.awt.Color(0, 0, 0));
         AguardaGrupo.setText("Aguarda");
         AguardaGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AguardaGrupoActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Nombre de la Materia:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,35 +124,34 @@ public class GrupoNuevo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AguardaGrupo)
-                .addGap(23, 23, 23))
+                .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                        .addGap(103, 103, 103))
+                    .addComponent(NombreDeLaMateria)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(30, 30, 30)))
-                                .addComponent(Grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)))
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel4)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(Matutino))
-                                .addComponent(Grado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Grado, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Vespertino))))
-                .addContainerGap(91, Short.MAX_VALUE))
+                            .addComponent(Vespertino))
+                        .addComponent(jLabel6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,9 +175,13 @@ public class GrupoNuevo extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(Matutino)
                     .addComponent(Vespertino))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NombreDeLaMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(AguardaGrupo)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -246,12 +242,14 @@ public class GrupoNuevo extends javax.swing.JFrame {
     private javax.swing.JTextField Grupo;
     private javax.swing.JList<String> ListadeEscuelas;
     private javax.swing.JRadioButton Matutino;
+    private javax.swing.JTextField NombreDeLaMateria;
     private javax.swing.JRadioButton Vespertino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

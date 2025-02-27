@@ -19,10 +19,10 @@ public class EliminarEscuela extends javax.swing.JFrame {
     /**
      * Creates new form EliminarEscuela
      */
-    PantallaDeIncio pantallaPrincipale; // Referencia a la Pantalla principal
+    //PantallaDeIncio pantallaPrincipale; // Referencia a la Pantalla principal
+    InicideClase pantallaPrincipale;
      EscuelaDAO escuelaDAO; // Declarar la variable para EscuelaDAO
-    public EliminarEscuela(PantallaDeIncio pantallas) {
-        this.pantallaPrincipale = pantallas; // Se pasa la referencia a Pantalla principal
+    public EliminarEscuela(InicideClase pantallas) {
         this.pantallaPrincipale = pantallas; // Se pasa la referencia a Pantalla principal
         this.escuelaDAO = new EscuelaDAO(); // Inicializar la instancia de EscuelaDAO
         initComponents();

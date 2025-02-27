@@ -89,24 +89,20 @@ public class EliminarGrupo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Footlight MT Light", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Eliminar Grupo");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("¿De que escuela es?");
 
         ListadeEscuelas.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jScrollPane1.setViewportView(ListadeEscuelas);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("¿Que grupo es?");
 
         botonBorrarActionPerformed.setBackground(new java.awt.Color(153, 153, 153));
         botonBorrarActionPerformed.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        botonBorrarActionPerformed.setForeground(new java.awt.Color(255, 255, 255));
         botonBorrarActionPerformed.setText("Borrar");
         botonBorrarActionPerformed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +113,6 @@ public class EliminarGrupo extends javax.swing.JFrame {
         ListadeClase.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jScrollPane2.setViewportView(ListadeClase);
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Escriba la IdGrupo que quiera eliminar:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
