@@ -117,6 +117,12 @@ public class GrupoNuevo extends javax.swing.JFrame {
 
         jLabel6.setText("Nombre de la Materia:");
 
+        NombreDeLaMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreDeLaMateriaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,21 +139,20 @@ public class GrupoNuevo extends javax.swing.JFrame {
                         .addGap(103, 103, 103))
                     .addComponent(NombreDeLaMateria)
                     .addComponent(jScrollPane1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel4)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Matutino))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Grado, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Vespertino))
-                        .addComponent(jLabel6))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Matutino))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Grado, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Vespertino))
+                    .addComponent(jLabel6)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)))
@@ -193,6 +198,7 @@ public class GrupoNuevo extends javax.swing.JFrame {
     int grado = (int) Grado.getValue();
     String grupo = Grupo.getText();
     String turno = Matutino.isSelected() ? "Matutino" : "Vespertino";
+    String nombreMateria = NombreDeLaMateria.getText();
 
     // Verificar que se haya seleccionado una escuela
     if (escuelaNombre == null) {
@@ -201,7 +207,7 @@ public class GrupoNuevo extends javax.swing.JFrame {
     }
 
     // Crear el objeto Grupo
-    Grupo nuevoGrupo = new Grupo(0, String.valueOf(grado), grupo, turno, escuelaNombre);
+    Grupo nuevoGrupo = new Grupo(0, String.valueOf(grado), grupo, turno, escuelaNombre, nombreMateria);
 
     // Guardar el grupo en la base de datos usando GrupoDAO
     try {
@@ -232,6 +238,10 @@ public class GrupoNuevo extends javax.swing.JFrame {
     private void GrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrupoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GrupoActionPerformed
+
+    private void NombreDeLaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreDeLaMateriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreDeLaMateriaActionPerformed
 
    
 

@@ -17,12 +17,13 @@ import java.util.List;
  */
 public class EscuelaDAO {
      public void agregarEscuela(Escuelas escuela) throws SQLException {
-        String sql = "INSERT INTO Escuela (nombre, direccion, clave) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Escuela (nombre, direccion, clave, tipoescuela) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, escuela.getNombre());
             stmt.setString(2, escuela.getDireccion());
             stmt.setString(3, escuela.getClave());
+            stmt.setString(4, escuela.getTipoEscuela());
             stmt.executeUpdate();
             System.out.println("Escuela guardada exitosamente");
         } catch (SQLException e) {

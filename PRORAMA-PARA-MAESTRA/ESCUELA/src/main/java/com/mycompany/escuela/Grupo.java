@@ -14,13 +14,15 @@ public class Grupo {
     private String grupo;
     private String turno;
     private String escuela_nombre;
+    private String nombreMateria;
 
-    public Grupo(int idGrupo, String grado, String grupo, String turno, String escuelaNombre) {
+    public Grupo(int idGrupo, String grado, String grupo, String turno, String escuelaNombre,String NombreMateria) {
         this.idGrupo = idGrupo;
         this.grado = grado;
         this.grupo = grupo;
         this.turno = turno;
         this.escuela_nombre = escuelaNombre;
+        this.nombreMateria = NombreMateria;
     }
     // Getters y Setters
     public int getIdGrupo() {
@@ -62,8 +64,16 @@ public class Grupo {
     public void setEscuela_nombre(String escuelaNombre) {
         this.escuela_nombre = escuelaNombre;
     }
+    // Getters y Setters
+    public String getNombreMateria() {
+        return nombreMateria;
+    }
+
+    public void setNombreMateria(String NombreMateria) {
+        this.nombreMateria = NombreMateria;
+    }
     
     public String toString() {
-        return "ID: " + idGrupo + " | Grado: " + grado + "-" + grupo + " | Turno: " + turno;
+        return "ID: " + idGrupo + " | Grado: " + grado + "-" + grupo + " | Turno: " + turno + " | Tipo de Clase"+ nombreMateria;
     }
 }

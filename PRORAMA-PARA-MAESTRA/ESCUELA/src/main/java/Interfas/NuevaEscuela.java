@@ -3,13 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfas;
-import Interfas.PantallaDeIncio;
-import Interfas.InicideClase;
 import javax.swing.JFrame;
 import com.mycompany.escuela.EscuelaDAO;
 import com.mycompany.escuela.Escuelas;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -198,15 +194,26 @@ public class NuevaEscuela extends javax.swing.JFrame {
     String nombre = NomEscuela.getText();
     String direccion = Direccion.getText();
     String clave = Clave.getText();
+    String tipoEscuela = "";
+    
+    // Determinar qué radio button está seleccionado
+    if (Primaria.isSelected()) {
+        tipoEscuela = "Primaria";
+    } else if (Secundaria.isSelected()) {
+        tipoEscuela = "Secundaria";
+    } else if (Preparatoria.isSelected()) {
+        tipoEscuela = "Preparatoria";
+    }
 
     // Validación básica
-    if (nombre.isEmpty() || direccion.isEmpty() || clave.isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos");
+    if (nombre.isEmpty() || direccion.isEmpty() || clave.isEmpty() || tipoEscuela.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos y selecciona el tipo de escuela.");
         return;
     }
 
     // Crear objeto Escuela
-    Escuelas escuela = new Escuelas(nombre, direccion, clave);
+    // Crear objeto Escuela con el nuevo atributo
+    Escuelas escuela = new Escuelas(nombre, direccion, clave, tipoEscuela);
     EscuelaDAO escuelaDAO = new EscuelaDAO();
 
     // Intentar guardar la escuela en la base de datos
@@ -248,8 +255,6 @@ public class NuevaEscuela extends javax.swing.JFrame {
             Secundaria.setEnabled(true);
         }
     }//GEN-LAST:event_PreparatoriaActionPerformed
-
-    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

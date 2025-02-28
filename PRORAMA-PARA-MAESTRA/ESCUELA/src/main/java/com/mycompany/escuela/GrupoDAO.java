@@ -18,13 +18,14 @@ import java.util.List;
 
 public class GrupoDAO {
     public void guardarGrupo(Grupo grupo) throws SQLException {
-       String sql = "INSERT INTO Grupo (grado, grupo, turno, escuela_nombre) VALUES (?, ?, ?, ?)";
+       String sql = "INSERT INTO Grupo (grado, grupo, turno, escuela_nombre, nombreMateria) VALUES (?, ?, ?, ?, ?)";
 try (Connection conn = DatabaseConnection.getConnection();
      PreparedStatement stmt = conn.prepareStatement(sql)) {
     stmt.setString(1, grupo.getGrado());
     stmt.setString(2, grupo.getGrupo());
     stmt.setString(3, grupo.getTurno());
     stmt.setString(4, grupo.getEscuela_nombre());  // Cambié "escuelaNombre" a "escuela_nombre"
+    stmt.setString(5, grupo.getNombreMateria());
     stmt.executeUpdate();
     System.out.println("Grupo guardado exitosamente");
 } catch (SQLException e) {

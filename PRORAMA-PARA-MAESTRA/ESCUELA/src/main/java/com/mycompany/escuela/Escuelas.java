@@ -12,11 +12,13 @@ public class Escuelas {
     private String nombre;
     private String direccion;
     private String clave;
+    private String tipoEscuela;
 
-    public Escuelas(String nombre, String direccion, String clave) {
+    public Escuelas(String nombre, String direccion, String clave,String tipoEscuela) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.clave = clave;
+        this.tipoEscuela = tipoEscuela;
     }
 
     // Getters y Setters
@@ -42,5 +44,12 @@ public class Escuelas {
 
     public void setClave(String clave) {
         this.clave = clave;
+    }
+    public String getTipoEscuela() {
+        return tipoEscuela;
+    }
+
+    public void setTipoEscuela(String tipoEscuela) {
+        this.tipoEscuela = tipoEscuela;
     }
 }

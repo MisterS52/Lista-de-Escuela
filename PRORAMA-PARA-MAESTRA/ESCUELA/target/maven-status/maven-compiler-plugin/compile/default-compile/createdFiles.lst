@@ -14,8 +14,8 @@ Interfas\EliminarGrupo.class
 Interfas\Clase$2.class
 Interfas\Clalificar$1.class
 Interfas\GrupoNuevo$1.class
-Interfas\NuevaEscuela$2.class
 Interfas\Clase.class
+Interfas\NuevaEscuela$2.class
 Interfas\EliminarEscuela$1.class
 Interfas\EliminarEscuela.class
 Interfas\GrupoNuevo.class
@@ -23,10 +23,11 @@ Interfas\Asistencia$1.class
 Interfas\Clase$6.class
 Interfas\NuevaEscuela$3.class
 Interfas\Clase$8.class
+Interfas\GrupoNuevo$5.class
 Interfas\GrupoNuevo$2.class
 com\mycompany\escuela\AsistenciaDAO$AsistenciaInfo.class
-Interfas\Clase$5.class
 Interfas\Asistencia.class
+Interfas\Clase$5.class
 com\mycompany\escuela\EscuelaDAO.class
 com\mycompany\escuela\ActividadDAO.class
 Interfas\Asistencia$2.class
@@ -47,6 +48,6 @@ com\mycompany\escuela\Grupo.class
 Interfas\NuevaEscuela.class
 Interfas\NuevaEscuela$1.class
 com\mycompany\escuela\ESCUELA.class
-Interfas\NuevaEscuela$4.class
 Interfas\Clase$1.class
+Interfas\NuevaEscuela$4.class
 Interfas\GrupoNuevo$3.class
