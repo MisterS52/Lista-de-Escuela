@@ -105,12 +105,16 @@ if (grupoSeleccionado != null) {
 
         jLabel1.setText("¿Que escuela quieres?");
 
+        ListadeEscuelas.setBackground(new java.awt.Color(204, 204, 204));
         ListadeEscuelas.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        ListadeEscuelas.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(ListadeEscuelas);
 
         jLabel2.setText("¿Que clase quieres?");
 
+        ListadeClase.setBackground(new java.awt.Color(204, 204, 204));
         ListadeClase.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        ListadeClase.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(ListadeClase);
 
         SiguienteClase.setBackground(new java.awt.Color(153, 153, 153));
@@ -197,14 +201,14 @@ if (grupoSeleccionado != null) {
                         .addComponent(NEscuela)
                         .addGap(6, 6, 6))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addComponent(ElimEscuela)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(SiguienteClase))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))

@@ -52,7 +52,7 @@ public class NuevoAlumno extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,8 +70,9 @@ public class NuevoAlumno extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Apellido Materno:");
 
-        Aguardar.setBackground(new java.awt.Color(0, 0, 0));
+        Aguardar.setBackground(new java.awt.Color(153, 153, 153));
         Aguardar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Aguardar.setForeground(new java.awt.Color(204, 204, 204));
         Aguardar.setText("Aguardar");
         Aguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +111,7 @@ public class NuevoAlumno extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Aguardar)
-                .addGap(20, 20, 20))
+                .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

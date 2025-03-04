@@ -45,6 +45,20 @@ public class EscuelaDAO {
             }
         }
     }
+    public String obtenerTipoEscuela(String nombreEscuela) throws SQLException {
+    String sql = "SELECT tipo FROM Escuelas WHERE nombre = ?";
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, nombreEscuela);
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getString("tipo");
+            }
+        }
+    }
+    return null; // Si no encuentra la escuela
+}
+
      public List<String> obtenerNombresEscuelas() throws SQLException {
         List<String> nombresEscuelas = new ArrayList<>();
         String sql = "SELECT nombre FROM Escuela";

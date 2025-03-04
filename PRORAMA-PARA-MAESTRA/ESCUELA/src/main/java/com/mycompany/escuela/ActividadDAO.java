@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFrame;
 
 public class ActividadDAO {
 
@@ -100,4 +101,36 @@ public class ActividadDAO {
             stmt.executeUpdate();
         }
     }
+   /**
+ * Método para obtener las evaluaciones de un grupo con nombre de la actividad, nombre del alumno y calificación.
+ * @param idGrupo El ID del grupo.
+ * @return Lista con las evaluaciones.
+ * @throws SQLException 
+ */
+public List<String> obtenerEvaluacionesPorGrupo(int idGrupo) throws SQLException {
+    String sql = """
+        SELECT a.NombreActividad, al.Nombre, e.calificacion
+        FROM Evaluacion e
+        JOIN Actividad a ON e.idActividad = a.idActividad
+        JOIN Alumno al ON e.idAlumno = al.idAlumno
+        WHERE a.id_grupo = ?;
+    """;
+
+    List<String> evaluaciones = new ArrayList<>();
+
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, idGrupo);
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                String actividad = rs.getString("NombreActividad");
+                String alumno = rs.getString("Nombre");
+                int calificacion = rs.getInt("calificacion");
+                evaluaciones.add("Actividad: " + actividad + " | Alumno: " + alumno + " | Calificación: " + calificacion);
+            }
+        }
+    }
+    return evaluaciones;
+}
 }

@@ -36,7 +36,7 @@ try (Connection conn = DatabaseConnection.getConnection();
     }
     public List<String> obtenerDetallesGruposPorEscuela(String escuelaNombre) throws SQLException {
      List<String> detallesGrupos = new ArrayList<>();
-    String sql = "SELECT idGrupo, grado, grupo, turno FROM Grupo WHERE escuela_nombre = ?";  // Incluir idGrupo
+    String sql = "SELECT idGrupo, grado, grupo, turno ,nombreMateria FROM Grupo WHERE escuela_nombre = ?";  // Incluir idGrupo
 
     try (Connection conn = DatabaseConnection.getConnection();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -48,7 +48,8 @@ try (Connection conn = DatabaseConnection.getConnection();
             String detalle = "ID: " + rs.getInt("idGrupo") + 
                              "| Grupo: " + rs.getString("grado") +
                              "-" + rs.getString("grupo") +
-                             "  Turno: " + rs.getString("turno");
+                             "  Turno: " + rs.getString("turno")+
+                             " Materia: " + rs.getString("nombreMateria") ;
             detallesGrupos.add(detalle);
         }
     }
